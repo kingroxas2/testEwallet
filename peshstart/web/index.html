@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/dart-lang/sdk">
+    <title>IIUM E-Wallet System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.dart.js"></script>
+</head>
+<body>
+  <div id="header">
+    <h1>IIUM E-Wallet</h1>
+    <!-- <h3>Hello, How can I help you?</h3> -->
+    <!-- to display message if the user is eligible for 10% dicount -->
+    <p id="notice"></p> 
+  </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Top-Up</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Make Payment</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">View Transaction History</button>
+  </div>
+
+  <p id="output"></p>
+  
+  <div id="London" class="tabcontent">
+    <!-- <label for="isCreditCard">Top-up using credit card? :<input type="checkbox" id="isCreditCard" name="isCreditCard" value="isCreditCard"></label> -->
+    <div id="buttonContainer">
+    <h2>Top Up</h2>
+    <label for="topUpAmount">Amount:</label><br>
+    <input type="number" id="topUpAmount">
+    <button id="topUpButton">Top Up</button><br>
+      <label>Top-up using:</label>
+    <div class="wrapper"> 
+      <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked="checked">
+      <label for="creditCard" class="radioButton">Credit Card</label>
+    </div>
+    <div class="wrapper">
+      <input type="radio" id="debitCard" name="paymentMethod" value="debitCard">
+      <label for="debitCard" class="radioButton">Debit Card</label>
+    </div>
+  </div>
+</div>
+  <div id="Paris" class="tabcontent">
+    <h2>Make Payment</h2>
+    <label for="makePayment">Amount:</label><br>
+    <input type="number" id="makePayment">
+    <button id="makePaymentButton">Make Payment</button>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <input id="viewTransactionButton" type=button onClick=""value='View Transaction'>
+    <br><br><br>
+    <!--append the table here  -->
+    <div id="Transaction-List">
+    </div>
+  </div>
+  
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    document.getElementById("defaultOpen").click();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IIUM Wallet - Top Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.dart.js"></script>
+</head>
+<body>
+	<div id="header">
+		<h1>IIUM Wallet - Top Up</h1>
+		<p>Please choose a top-up amount and payment method.</p>
+	</div>
+	<div id="top-up-container">
+		<h2>Top Up</h2>
+		<div id="preset-values">
+			<p>Select an amount to top-up:</p>
+			<button type="radio" id="preset1" value="50">RM50</button>
+			<button type="radio" id="preset2" value="100">RM100</button>
+			<button type="radio" id="preset3" value="200">RM200</button>
+		</div>
+		<div id="custom-value">
+			<p>Or enter a custom value:</p>
+			<label for="customAmount">Amount:</label>
+			<input type="number" id="customAmount">
+		</div>
+		<div id="payment-method">
+			<p>Select a payment method:</p>
+			<label for="credit_card">Credit Card</label>
+			<input type="radio" id="credit_card" name="payment_method" value="credit_card">
+			<label for="online_banking">Online Banking</label>
+			<input type="radio" id="online_banking" name="payment_method" value="online_banking">
+		</div>
+		<button id="topUpButton">Top Up</button>
+	</div>
+	<script defer src="topup.js"></script>
+</body>
+</html>
